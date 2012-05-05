@@ -92,8 +92,10 @@ pajar.findAll('div.gamma', document.body);
 
         var results = [];
 
-        if ((root.tagName && (root.tagName.toLowerCase() === tagName.toLowerCase())) &&
-            ((!className) || hasClass(root, className))) {
+        if (((tagName === '*') ||
+             (root.tagName && (root.tagName.toLowerCase() === tagName.toLowerCase()))) &&
+            ((!className) ||
+             hasClass(root, className))) {
             results.push(root);
         }
 
