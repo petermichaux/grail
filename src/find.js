@@ -3,9 +3,9 @@
     var regExpCache = {};
 
     function hasClass(element, className) {
-        var regExp = regExpCache[className] ||
-                     (regExpCache[className] = new RegExp('(?:^|\\s+)' + className + '(?:\\s+|$)'));
-        return regExp.test(element.className);
+        return (Object.prototype.hasOwnProperty.call(regExpCache, className) ?
+                   regExpCache[className] :
+                   (regExpCache[className] = new RegExp('(?:^|\\s+)' + className + '(?:\\s+|$)'))).test(element.className);
     }
 
     function filterDOM(node, func) {
