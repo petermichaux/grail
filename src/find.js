@@ -59,9 +59,6 @@ pajar.findAll('div.gamma', document.body);
 
 */
     pajar.findAll = function(selector, root) {
-        if ((arguments.length > 1) && !root) {
-            throw new Error('pajar.findAll: the second argument can be omitted or an element but cannot be falsy.');
-        }
         root = root || document;
         var matches;
 
