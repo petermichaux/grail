@@ -4,10 +4,33 @@ Pajar
 A simple JavaScript library to find DOM nodes by CSS selectors.
 
 
+Examples
+========
+
+```javascript
+pajar.find('#abc');
+pajar.find('div', document.body);
+pajar.find('div.alpha');
+pajar.find('.alpha');
+```
+
+
+Releases
+--------
+
+See the releases directory for production ready builds.
+
+
 Status
 ------
 
-Pajar is a new project and under construction.
+Ready.
+
+
+Browser Support
+---------------
+
+Tested working in IE6 and newer browsers by a variety of manufacturers.
 
 
 Dependencies

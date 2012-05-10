@@ -1,5 +1,5 @@
 /*
-Pajar version 0 - A simple JavaScript library to find DOM nodes by CSS selectors.
+Pajar version 1
 Copyright (c) 2012, Peter Michaux
 All rights reserved.
 Licensed under the Simplified BSD License.
