@@ -9,9 +9,9 @@ Examples
 
 ```javascript
 grail.find('#abc');
-grail.find('div', document.body);
 grail.find('div.alpha');
-grail.find('.alpha');
+grail.findAll('div', document.body);
+grail.findAll('.alpha');
 ```
 
 
