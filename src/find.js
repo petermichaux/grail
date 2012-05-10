@@ -76,7 +76,7 @@
 
 /**
 
-@property parjar.findAll
+@property grail.findAll
 
 @parameter selector {string} The CSS selector for the search.
 
