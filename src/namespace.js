@@ -1,1 +1,1 @@
-var pajar = pajar || {};
+var grail = grail || {};

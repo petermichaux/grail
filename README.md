@@ -1,4 +1,4 @@
-Pajar
+Grail
 =====
 
 A simple JavaScript library to find DOM nodes by CSS selectors.
@@ -8,10 +8,10 @@ Examples
 ========
 
 ```javascript
-pajar.find('#abc');
-pajar.find('div', document.body);
-pajar.find('div.alpha');
-pajar.find('.alpha');
+grail.find('#abc');
+grail.find('div', document.body);
+grail.find('div.alpha');
+grail.find('.alpha');
 ```
 
 

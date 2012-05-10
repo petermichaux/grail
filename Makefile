@@ -6,10 +6,10 @@ SRCS = src/header.js                 \
 
 build: $(SRCS)
 	mkdir -p build
-	cat $(SRCS) >build/pajar.js
-	jsmin <build/pajar.js >build/pajar-tmp.js
-	cat src/header.js build/pajar-tmp.js >build/pajar-min.js
-	rm build/pajar-tmp.js
+	cat $(SRCS) >build/grail.js
+	jsmin <build/grail.js >build/grail-tmp.js
+	cat src/header.js build/grail-tmp.js >build/grail-min.js
+	rm build/grail-tmp.js
 
 clean:
 	rm -rf build

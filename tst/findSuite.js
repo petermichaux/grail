@@ -17,37 +17,37 @@
     buster.testCase("find test suite", {
 
         "test find id for existing element": function() {
-            var el = pajar.find('#alpha', root);
+            var el = grail.find('#alpha', root);
             assert.same(alpha, el);
         },
 
         "test find id for non-existing element": function() {
-            var el = pajar.find('#non-existing-id', root);
+            var el = grail.find('#non-existing-id', root);
             assert(el === null || el === undefined);
         },
 
         "test class for existing element": function() {
-            var el = pajar.find('.Gamma', root);
+            var el = grail.find('.Gamma', root);
             assert.same(gamma, el);
         },
 
         "test tag existing element": function() {
-            var el = pajar.find('span', root);
+            var el = grail.find('span', root);
             assert.same(gamma, el);
         },
 
         "test tag and class for existing element": function() {
-            var el = pajar.find('span.Gamma', root);
+            var el = grail.find('span.Gamma', root);
             assert.same(gamma, el);
         },
 
         "test tag and class for non-existing element": function() {
-            var el = pajar.find('div.Gamma', root); // note that .Gamma is a span
+            var el = grail.find('div.Gamma', root); // note that .Gamma is a span
             assert(el === null || el === undefined);
         },
 
         "test excess whitespace on selector is ok": function() {
-            var el = pajar.find('   #alpha   ', root);
+            var el = grail.find('   #alpha   ', root);
             assert.same(alpha, el);
         }
 
