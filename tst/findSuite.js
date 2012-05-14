@@ -26,29 +26,73 @@
             assert(el === null || el === undefined);
         },
 
-        "test class for existing element": function() {
+        "test find class for existing element": function() {
             var el = grail.find('.Gamma', root);
             assert.same(gamma, el);
         },
 
-        "test tag existing element": function() {
+        "test find tag existing element": function() {
             var el = grail.find('span', root);
             assert.same(gamma, el);
         },
 
-        "test tag and class for existing element": function() {
+        "test find tag and class for existing element": function() {
             var el = grail.find('span.Gamma', root);
             assert.same(gamma, el);
         },
 
-        "test tag and class for non-existing element": function() {
+        "test find tag and class for non-existing element": function() {
             var el = grail.find('div.Gamma', root); // note that .Gamma is a span
             assert(el === null || el === undefined);
         },
 
-        "test excess whitespace on selector is ok": function() {
+        "test find excess whitespace on selector is ok": function() {
             var el = grail.find('   #alpha   ', root);
             assert.same(alpha, el);
+        },
+        
+        // findAll ------------
+        
+        "test findAll id for existing element": function() {
+            var arr = grail.findAll('#alpha', root);
+            assert.same(1, arr.length);
+            assert.same(alpha, arr[0]);
+        },
+
+        "test findAll id for non-existing element": function() {
+            var arr = grail.findAll('#non-existing-id', root);
+            assert.same(0, arr.length);
+        },
+
+        "test findAll class for existing element": function() {
+            var arr = grail.findAll('.Gamma', root);
+            assert.same(1, arr.length);
+            assert.same(gamma, arr[0]);
+        },
+
+        "test findAll tag existing elements": function() {
+            var arr = grail.findAll('div', root);
+            assert.same(3, arr.length);
+            assert.same(root, arr[0]);
+            assert.same(alpha, arr[1]);
+            assert.same(beta, arr[2]);
+        },
+
+        "test findAll tag and class for existing element": function() {
+            var arr = grail.findAll('span.Gamma', root);
+            assert.same(1, arr.length);
+            assert.same(gamma, arr[0]);
+        },
+
+        "test findAll tag and class for non-existing element": function() {
+            var arr = grail.findAll('div.Gamma', root); // note that .Gamma is a span
+            assert.same(0, arr.length);
+        },
+
+        "test findAll excess whitespace on selector is ok": function() {
+            var arr = grail.findAll('   #alpha   ', root);
+            assert.same(1, arr.length);
+            assert.same(alpha, arr[0]);
         }
 
     });
