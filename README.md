@@ -18,7 +18,7 @@ grail.findAll('.alpha');
 Releases
 --------
 
-See the releases directory for production ready builds.
+See http://peter.michaux.ca/downloads/grail/ for production ready builds.
 
 
 Status
