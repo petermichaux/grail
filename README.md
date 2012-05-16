@@ -15,8 +15,8 @@ grail.findAll('.alpha');
 ```
 
 
-Releases
---------
+Downloads
+---------
 
 See http://peter.michaux.ca/downloads/grail/ for production ready builds.
 
