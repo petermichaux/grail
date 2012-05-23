@@ -5,7 +5,7 @@ A simple JavaScript library to find DOM nodes by CSS selectors.
 
 
 Examples
-========
+--------
 
 ```javascript
 grail.find('#abc');
