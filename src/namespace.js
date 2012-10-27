@@ -1,1 +1,1 @@
-var grail = grail || {};
+var grail = {};
