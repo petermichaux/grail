@@ -42,7 +42,7 @@ None.
 Source Code
 -----------
 
-GitHub: https://github.com/petermichaux/maria
+GitHub: https://github.com/petermichaux/grail
 
 
 Build
