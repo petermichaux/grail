@@ -35,7 +35,7 @@
         }
         return function(element) {
             return (((tagName === '*') ||
-                    (element.tagName && (element.tagName.toUpperCase() === tagName))) &&
+                     (element.tagName && (element.tagName.toUpperCase() === tagName))) &&
                     ((!className) ||
                      regExp.test(element.className)));
         }
