@@ -24,7 +24,7 @@ See http://peter.michaux.ca/downloads/grail/ for production ready builds.
 Status
 ------
 
-Ready.
+Stable.
 
 
 Browser Support
