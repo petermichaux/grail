@@ -97,7 +97,7 @@ In the case of a #myId selector, the returned array will always have
 zero or one elements. It is more likely that you want to call grail.find when
 using an id selector.
 
-If the root element is supplied it is used as the starting point for the search.
+If the root element is supplied then it is used as the starting point for the search.
 The root element will be in the results if it matches the selector.
 If the root element is not supplied then the current document is used
 as the search starting point.
