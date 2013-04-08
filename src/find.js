@@ -76,14 +76,6 @@
 
 /**
 
-@property grail.findAll
-
-@parameter selector {string} The CSS selector for the search.
-
-@parameter root {Document|Element} Optional element to use as the search start point.
-
-@description
-
 Search for all elements matching the CSS selector. Returns an array of the elements.
 
 Acceptable simple selectors are of the following forms only.
@@ -102,8 +94,14 @@ The root element will be in the results if it matches the selector.
 If the root element is not supplied then the current document is used
 as the search starting point.
 
-grail.findAll('#alpha');
-grail.findAll('div.gamma', document.body);
+    grail.findAll('#alpha');
+    grail.findAll('div.gamma', document.body);
+
+@param {string} selector The CSS selector for the search.
+
+@param {Document|Element} [root] The element to use as the search start point.
+
+@return {Array} An array of matching `Element` objects.
 
 */
     grail.findAll = function(selector, root) {
@@ -139,19 +137,17 @@ grail.findAll('div.gamma', document.body);
 
 /**
 
-@property grail.find
-
-@parameter selector {string} The CSS selector for the search.
-
-@parameter root {Document|Element} Optional element to use as the search start point.
-
-@description
-
 Search for the first element matching the CSS selector. If the element is
 found then it is returned. If no matching element is found then
 null or undefined is returned.
 
 The rest of the details are the same as for grail.findAll.
+
+@param {string} [selector] The CSS selector for the search.
+
+@param {Document|Element} [root] The element to use as the search start point.
+
+@return {Element} The found `Element`.
 
 */
     grail.find = function(selector, root) {
