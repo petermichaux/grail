@@ -50,7 +50,13 @@
             var el = grail.find('   #alpha   ', root);
             assert.same(alpha, el);
         },
-        
+
+        "test find does not do partial className match": function() {
+            // note the ommitted 'a' at the end of the class name selector
+            var el = grail.find('.Gamm', root);
+            assert.same(null, el);
+        },
+
         // findAll ------------
         
         "test findAll id for existing element": function() {
