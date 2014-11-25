@@ -133,6 +133,9 @@ as the search starting point.
             if (isHostMethod(root, 'querySelectorAll')) {
                 var elements;
                 var results = [];
+                // querySelectorAll does not include the root element in its results
+                // even if the root element matches the selector. We test the root element
+                // for a match before using querySelectorAll to search the descendents.
                 if (tagNameClassNameMatcher(root)) {
                     results.push(root);
                 }
@@ -176,6 +179,9 @@ The rest of the details are the same as for grail.findAll.
         else if (matches = selector.match(tagClassRegExp)) {
             var tagNameClassNameMatcher = getTagNameClassNameMatcher(matches[1], matches[2]);
             if (isHostMethod(root, 'querySelector')) {
+                // querySelector does not return the root element as its result even
+                // if the root element matches the selector. We test the root element
+                // for a match before using querySelector to search the descendents.
                 return tagNameClassNameMatcher(root) ? root : root.querySelector(selector);
             }
             else {
