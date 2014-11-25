@@ -18,7 +18,7 @@
                 ((typeof obj[prop] === 'object') && (obj[prop] !== null)); // Internet Explorer
     }
 
-    function filterDOM(node, func) {
+    function findAllInDOM(node, func) {
        var results = [];
        function walk(node) {
            if (func(node)) {
@@ -34,7 +34,7 @@
        return results;
     }
 
-    function firstInDOM(node, func) {
+    function findInDOM(node, func) {
         function walk(node) {
             if (func(node)) {
                 return node;
@@ -58,7 +58,7 @@
                        root.getElementById(id) :
                        (isHostMethod(root, 'querySelector')) ?
                            root.querySelector('#' + id) :
-                           firstInDOM(root, function(node) {return node.id === id;});
+                           findInDOM(root, function(node) {return node.id === id;});
     }
 
     function getTagNameClassNameMatcher(tagName, className) {
@@ -127,7 +127,7 @@ as the search starting point.
                 return results;
             }
             else {
-                return filterDOM(root, tagNameClassNameMatcher);
+                return findAllInDOM(root, tagNameClassNameMatcher);
             }
         }
         else {
@@ -163,7 +163,7 @@ The rest of the details are the same as for grail.findAll.
                 return tagNameClassNameMatcher(root) ? root : root.querySelector(selector);
             }
             else {
-                return firstInDOM(root, tagNameClassNameMatcher);
+                return findInDOM(root, tagNameClassNameMatcher);
             }
         }
         else {
