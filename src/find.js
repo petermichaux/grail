@@ -13,9 +13,25 @@
         return str.replace(trimLeft, '').replace(trimRight, '');
     }
 
+    // Even though it is not required by the ECMAScript specificaiton,
+    // most host methods in most browsers have typeof "function". Some
+    // versions of Internet Explorer, however, have host methods with
+    // typeof "object". Relavant to this library, in particular, is
+    // the feature test 
+    // 
+    //    typeof document.getElementById
+    //
+    // which returns "object" in Internet Explorer 6. Also
+    //
+    //    typeof document.querySelector
+    //
+    // returns "object" in Internet Explorer 8. The ECMAScript null
+    // value also has typeof "object" so we also need to check that
+    // the host method is not actually the null value.
+    //
     function isHostMethod(obj, prop) {
         return (typeof obj[prop] === 'function') ||
-                ((typeof obj[prop] === 'object') && (obj[prop] !== null)); // Internet Explorer
+                ((typeof obj[prop] === 'object') && (obj[prop] !== null));
     }
 
     function findAllInDOM(node, func) {
