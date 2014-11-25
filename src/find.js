@@ -18,29 +18,6 @@
                 ((typeof obj[prop] === 'object') && (obj[prop] !== null)); // Internet Explorer
     }
 
-    function findById(id, root) {
-        return (root.id === id) ?
-                   root :
-                   (isHostMethod(root, 'getElementById')) ?
-                       root.getElementById(id) :
-                       (isHostMethod(root, 'querySelector')) ?
-                           root.querySelector('#' + id) :
-                           firstInDOM(root, function(node) {return node.id === id;});
-    }
-
-    function getTagNameClassNameMatcher(tagName, className) {
-        tagName = tagName ? tagName.toUpperCase() : '*';
-        if (className) {
-            var regExp = new RegExp('(?:^|\\s+)' + className + '(?:\\s+|$)');
-        }
-        return function(element) {
-            return (((tagName === '*') ||
-                     (element.tagName && (element.tagName.toUpperCase() === tagName))) &&
-                    ((!className) ||
-                     regExp.test(element.className)));
-        }
-    }
-
     function filterDOM(node, func) {
        var results = [];
        function walk(node) {
@@ -72,6 +49,29 @@
             }
         }
         return walk(node);
+    }
+
+    function findById(id, root) {
+        return (root.id === id) ?
+                   root :
+                   (isHostMethod(root, 'getElementById')) ?
+                       root.getElementById(id) :
+                       (isHostMethod(root, 'querySelector')) ?
+                           root.querySelector('#' + id) :
+                           firstInDOM(root, function(node) {return node.id === id;});
+    }
+
+    function getTagNameClassNameMatcher(tagName, className) {
+        tagName = tagName ? tagName.toUpperCase() : '*';
+        if (className) {
+            var regExp = new RegExp('(?:^|\\s+)' + className + '(?:\\s+|$)');
+        }
+        return function(element) {
+            return (((tagName === '*') ||
+                     (element.tagName && (element.tagName.toUpperCase() === tagName))) &&
+                    ((!className) ||
+                     regExp.test(element.className)));
+        }
     }
 
 /**
